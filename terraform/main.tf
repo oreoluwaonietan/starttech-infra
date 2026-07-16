@@ -5,6 +5,14 @@ terraform {
       version = "~> 5.0"
     }
   }
+
+  backend "s3" {
+    bucket         = "starttech-tfstate-067514125712"
+    key            = "starttech-infra/terraform.tfstate"
+    region         = "us-east-1"
+    dynamodb_table = "starttech-tfstate-lock"
+    encrypt        = true
+  }
 }
 
 provider "aws" {
