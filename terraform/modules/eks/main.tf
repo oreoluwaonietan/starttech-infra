@@ -18,7 +18,7 @@ resource "aws_iam_role_policy_attachment" "cluster_policy" {
 resource "aws_eks_cluster" "main" {
   name     = "starttech-cluster"
   role_arn = aws_iam_role.cluster.arn
-  version  = "1.34"
+  version  = "1.31"
 
   vpc_config {
     subnet_ids = var.private_subnet_ids
